@@ -1,0 +1,7 @@
+{
+    "metadata": {
+      "annotations": {
+        "networking.gke.io/load-balancer-type": null
+      }
+    }
+  }

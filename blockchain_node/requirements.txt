@@ -1,0 +1,4 @@
+Flask>=2.0
+requests>=2.20 # For potential future inter-node communication
+oqs>=0.8 # Or the specific version of the oqs-python wrapper you install
+gunicorn>=20.0

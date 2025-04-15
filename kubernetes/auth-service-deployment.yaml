@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-service
+  namespace: qr-auth
+  labels:
+    app: auth-service
+spec:
+  replicas: 2 # Run a couple of replicas for availability
+  selector:
+    matchLabels:
+      app: auth-service
+  template:
+    metadata:
+      labels:
+        app: auth-service
+    spec:
+      containers:
+      - name: auth-service
+        # IMPORTANT: Replace with your actual image path in Artifact Registry
+        image: us-central1-docker.pkg.dev/astute-charter-213919/qr-auth-repo/auth_service:latest
+        ports:
+        - containerPort: 8080
+          name: http-auth
+        env:
+        # Define environment variables needed by the auth service
+        - name: BLOCKCHAIN_NODE_SVC_URL
+          # Use Kubernetes DNS for service discovery within the cluster
+          value: "http://blockchain-node-svc.qr-auth.svc.cluster.local:5000"
+        - name: JWT_SECRET
+          # !!! Use Kubernetes Secrets for real secrets !!!
+          value: "DEMO_JWT_SECRET_REPLACE_ME"
+        - name: FLASK_APP # For flask run command if used directly
+          value: "app.py"
+        # Add readiness/liveness probes
+        readinessProbe:
+          httpGet:
+            path: / # Add a simple health check endpoint if needed
+            port: http-auth
+          initialDelaySeconds: 10
+          periodSeconds: 15
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http-auth
+          initialDelaySeconds: 25
+          periodSeconds: 30

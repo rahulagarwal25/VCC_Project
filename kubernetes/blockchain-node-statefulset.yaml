@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: blockchain-node
+  namespace: qr-auth # Use the created namespace
+spec:
+  serviceName: "blockchain-node-svc" # Must match the headless Service name
+  replicas: 3 # Start with 3 nodes for basic simulation
+  selector:
+    matchLabels:
+      app: blockchain-node
+  template:
+    metadata:
+      labels:
+        app: blockchain-node
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: blockchain-node
+        # IMPORTANT: Replace with your actual image path in Artifact Registry
+        image: us-central1-docker.pkg.dev/astute-charter-213919/qr-auth-repo/blockchain_node:latest
+        ports:
+        - containerPort: 5000
+          name: http-node
+        env:
+        - name: HOSTNAME # Pass hostname down to app (used as node_id in demo code)
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        # Add readiness/liveness probes for production
+        readinessProbe:
+          httpGet:
+            path: /chain # A simple endpoint to check if API is up
+            port: http-node
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        livenessProbe:
+          httpGet:
+            path: /chain
+            port: http-node
+          initialDelaySeconds: 30
+          periodSeconds: 30
+        volumeMounts:
+        - name: blockchain-data
+          mountPath: /data # Mount persistent storage here (though demo app doesn't use it)
+  volumeClaimTemplates:
+  - metadata:
+      name: blockchain-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ] # Standard GKE PD access mode
+      resources:
+        requests:
+          storage: 5Gi # Small storage for demo ledger data (if implemented)
+      storageClassName: standard # GKE default standard PD

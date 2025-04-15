@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: qr-auth-config
+  namespace: qr-auth
+data:
+  # Example configuration data - not heavily used in current demo code
+  log_level: "INFO"
+  default_audience: "cross-cloud-resource-default"
+  # You could mount this ConfigMap as a volume or expose keys as env vars
+  # in the Deployment/StatefulSet specs if needed.

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-service-internal-lb
+  namespace: qr-auth
+  annotations:
+    # Create an Internal Load Balancer accessible within the VPC
+    networking.gke.io/load-balancer-type: "External"
+  labels:
+    app: auth-service
+spec:
+  type: LoadBalancer # Type LoadBalancer with the annotation creates an ILB
+  selector:
+    app: auth-service # Selects the pods from the auth-service deployment
+  ports:
+  - protocol: TCP
+    port: 80 # Port the ILB listens on
+    targetPort: http-auth # Port the container listens on (8080)

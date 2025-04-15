@@ -1,0 +1,3 @@
+# This is implicitly created by the StatefulSet's volumeClaimTemplates
+# You generally don't need a separate PVC file for StatefulSets like this.
+# The definition is included within the StatefulSet YAML.
