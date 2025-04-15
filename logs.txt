@@ -1,0 +1,178 @@
+==== AUTH_SERVICE_LOGS ====
+[2025-04-14 12:10:32 +0000] [1] [INFO] Starting gunicorn 23.0.0
+[2025-04-14 12:10:32 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+[2025-04-14 12:10:32 +0000] [1] [INFO] Using worker: sync
+[2025-04-14 12:10:32 +0000] [7] [INFO] Booting worker with pid: 7
+INFO:crypto_qr:Auth Service Using QR Key Mechanism: Dilithium3
+INFO:crypto_qr:Auth Service Using QR Key Mechanism: Dilithium3
+WARNING:crypto_qr:OQS not available: No module named 'oqs'. Using fallback mode.
+ERROR:crypto_qr:CRITICAL: Auth Service failed to initialize its own QR keys.
+WARNING:app:Using default insecure JWT_SECRET!
+[2025-04-15 06:43:19 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:7)
+[2025-04-15 06:43:19 +0000] [7] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-15 06:43:19 +0000] [7] [INFO] Worker exiting (pid: 7)
+[2025-04-15 06:43:19 +0000] [8] [INFO] Booting worker with pid: 8
+INFO:crypto_qr:Auth Service Using QR Key Mechanism: Dilithium3
+INFO:crypto_qr:Auth Service Using QR Key Mechanism: Dilithium3
+WARNING:crypto_qr:OQS not available: No module named 'oqs'. Using fallback mode.
+ERROR:crypto_qr:CRITICAL: Auth Service failed to initialize its own QR keys.
+WARNING:app:Using default insecure JWT_SECRET!
+[2025-04-14 12:10:16 +0000] [1] [INFO] Starting gunicorn 23.0.0
+[2025-04-14 12:10:16 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+[2025-04-14 12:10:16 +0000] [1] [INFO] Using worker: sync
+[2025-04-14 12:10:16 +0000] [7] [INFO] Booting worker with pid: 7
+INFO:crypto_qr:Auth Service Using QR Key Mechanism: Dilithium3
+INFO:crypto_qr:Auth Service Using QR Key Mechanism: Dilithium3
+WARNING:crypto_qr:OQS not available: No module named 'oqs'. Using fallback mode.
+ERROR:crypto_qr:CRITICAL: Auth Service failed to initialize its own QR keys.
+WARNING:app:Using default insecure JWT_SECRET!
+[2025-04-14 12:19:22 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:7)
+[2025-04-14 12:19:22 +0000] [7] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-14 12:19:22 +0000] [7] [INFO] Worker exiting (pid: 7)
+[2025-04-14 12:19:22 +0000] [8] [INFO] Booting worker with pid: 8
+INFO:crypto_qr:Auth Service Using QR Key Mechanism: Dilithium3
+INFO:crypto_qr:Auth Service Using QR Key Mechanism: Dilithium3
+WARNING:crypto_qr:OQS not available: No module named 'oqs'. Using fallback mode.
+ERROR:crypto_qr:CRITICAL: Auth Service failed to initialize its own QR keys.
+WARNING:app:Using default insecure JWT_SECRET!
+[2025-04-14 14:32:57 +0000] [8] [WARNING] Invalid request from ip=10.128.0.7: Invalid HTTP Version: (2, 0)
+[2025-04-14 17:23:49 +0000] [8] [WARNING] Invalid request from ip=10.128.0.7: Invalid HTTP Version: (2, 0)
+[2025-04-14 18:23:12 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:8)
+[2025-04-14 18:23:12 +0000] [8] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 274, in parse
+    line, rbuf = self.read_line(unreader, buf, self.limit_request_line)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 326, in read_line
+    self.get_data(unreader, buf)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-14 18:23:12 +0000] [8] [INFO] Worker exiting (pid: 8)
+[2025-04-14 18:23:12 +0000] [9] [INFO] Booting worker with pid: 9
+INFO:crypto_qr:Auth Service Using QR Key Mechanism: Dilithium3
+INFO:crypto_qr:Auth Service Using QR Key Mechanism: Dilithium3
+WARNING:crypto_qr:OQS not available: No module named 'oqs'. Using fallback mode.
+ERROR:crypto_qr:CRITICAL: Auth Service failed to initialize its own QR keys.
+WARNING:app:Using default insecure JWT_SECRET!
+[2025-04-15 07:54:08 +0000] [9] [WARNING] Invalid request from ip=10.128.0.7: Invalid HTTP request line: 'SSH-2.0-Go'
+[2025-04-15 07:58:18 +0000] [9] [WARNING] Invalid request from ip=10.128.0.7: Invalid HTTP request line: 'SSH-2.0-Go'
+[2025-04-15 10:12:21 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:9)
+[2025-04-15 10:12:21 +0000] [9] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+  File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-04-15 10:12:21 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2025-04-15 10:12:21 +0000] [10] [INFO] Booting worker with pid: 10
+INFO:crypto_qr:Auth Service Using QR Key Mechanism: Dilithium3
+INFO:crypto_qr:Auth Service Using QR Key Mechanism: Dilithium3
+WARNING:crypto_qr:OQS not available: No module named 'oqs'. Using fallback mode.
+ERROR:crypto_qr:CRITICAL: Auth Service failed to initialize its own QR keys.
+WARNING:app:Using default insecure JWT_SECRET!
+
+
+==== BLOCKCHAIN_NODE_LOGS ====
+[2025-04-12 11:30:21 +0000] [1] [INFO] Starting gunicorn 23.0.0
+[2025-04-12 11:30:21 +0000] [1] [INFO] Listening at: http://0.0.0.0:5000 (1)
+[2025-04-12 11:30:21 +0000] [1] [INFO] Using worker: sync
+[2025-04-12 11:30:21 +0000] [7] [INFO] Booting worker with pid: 7
+INFO:crypto_qr:Using QR Key Mechanism: Dilithium3
+INFO:crypto_qr:Initializing OQS Signature signer for Dilithium3
+ERROR:main:CRITICAL: Node blockchain-node-0 failed to initialize QR keys: module 'oqs' has no attribute 'MechanismNotEnabledError'. Exiting.
+INFO:main:Created Genesis Block
+[2025-04-12 11:29:46 +0000] [1] [INFO] Starting gunicorn 23.0.0
+[2025-04-12 11:29:46 +0000] [1] [INFO] Listening at: http://0.0.0.0:5000 (1)
+[2025-04-12 11:29:46 +0000] [1] [INFO] Using worker: sync
+[2025-04-12 11:29:46 +0000] [7] [INFO] Booting worker with pid: 7
+INFO:crypto_qr:Using QR Key Mechanism: Dilithium3
+INFO:crypto_qr:Initializing OQS Signature signer for Dilithium3
+ERROR:main:CRITICAL: Node blockchain-node-1 failed to initialize QR keys: module 'oqs' has no attribute 'MechanismNotEnabledError'. Exiting.
+INFO:main:Created Genesis Block
+[2025-04-12 11:29:03 +0000] [1] [INFO] Starting gunicorn 23.0.0
+[2025-04-12 11:29:03 +0000] [1] [INFO] Listening at: http://0.0.0.0:5000 (1)
+[2025-04-12 11:29:03 +0000] [1] [INFO] Using worker: sync
+[2025-04-12 11:29:03 +0000] [6] [INFO] Booting worker with pid: 6
+INFO:crypto_qr:Using QR Key Mechanism: Dilithium3
+INFO:crypto_qr:Initializing OQS Signature signer for Dilithium3
+ERROR:main:CRITICAL: Node blockchain-node-2 failed to initialize QR keys: module 'oqs' has no attribute 'MechanismNotEnabledError'. Exiting.
+INFO:main:Created Genesis Block
+ERROR:main:Node signer not available, cannot add block.
+ERROR:main:Failed to add registration block for identity: alice01
+ERROR:main:Node signer not available, cannot add block.
+ERROR:main:Failed to add registration block for identity: rahul
+
+
